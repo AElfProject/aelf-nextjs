@@ -32,10 +32,10 @@ function ContractApp() {
       {childrenList().map((i, k) => (
         <p key={k}>{i}</p>
       ))}
-      <button onClick={() => activate()}>activate</button>
-      <button onClick={() => deactivate()}>deactivate</button>
-      <button onClick={() => changeWallet()}>changeWallet</button>
-      <button
+      <Button onClick={() => activate()}>activate</Button>
+      <Button onClick={() => deactivate()}>deactivate</Button>
+      <Button onClick={() => changeWallet()}>changeWallet</Button>
+      <Button
         onClick={async () => {
           if (!aelfBridges) return;
           try {
@@ -52,8 +52,8 @@ function ContractApp() {
           }
         }}>
         getBlockHeight
-      </button>
-      <button
+      </Button>
+      <Button
         onClick={async () => {
           if (!defaultAElfBridge || !account) return;
           const req = await defaultAElfBridge.chain.contractAt('ASh2Wt7nSEmYqnGxPPzp4pnVDU4uhj1XW9Se5VeZcX2UDdyjx', {
@@ -62,23 +62,23 @@ function ContractApp() {
           setContract(req.result || req);
         }}>
         contractAt Token contract
-      </button>
-      <button
+      </Button>
+      <Button
         onClick={async () => {
           if (!contract) return;
           const req = await contract.GetTokenInfo.call({ symbol: 'ELF' });
           setTokenInfo(req.result || req);
         }}>
         GetTokenInfo
-      </button>
-      <button
+      </Button>
+      <Button
         onClick={async () => {
           if (!defaultAElfBridge || !account) return;
           const signature = await getSignatureByBridge(defaultAElfBridge, account, AElf.utils.sha256('example'));
           setSignature(signature);
         }}>
         Signature
-      </button>
+      </Button>
     </>
   );
 }

@@ -15,7 +15,7 @@ export default function Home(props: ISSRDataProps) {
   return (
     <>
       <div className={styles.body}>
-        {/* <Wallet />
+        <Wallet />
         <br />
         <Card title="i18n" bordered={false}>
           i18n：{t('Connect')}
@@ -29,7 +29,7 @@ export default function Home(props: ISSRDataProps) {
         <br />
         <Counter />
         <br />
-        <ShowSSRData datassr={props.datassr} /> */}
+        <ShowSSRData datassr={props.datassr} />
         <br />
         <Contract />
       </div>
