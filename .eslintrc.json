@@ -14,7 +14,14 @@
       "jsx": true
     }
   },
-  "ignorePatterns": ["build/**", "next.config.js", "babel.config.js"],
+  "ignorePatterns": [
+    "build/**",
+    "next.config.js",
+    "babel.config.js",
+    "examples/**/build/**",
+    "examples/**/next.config.js",
+    "examples/**/babel.config.js"
+  ],
   "rules": {
     "@typescript-eslint/no-explicit-any": 0,
     "@typescript-eslint/no-unsafe-assignment": 0,
