@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <div className={styles.body}>
-      <Radio.Group options={options} onChange={onChange} value={value} optionType="button" />
+      {/* <Radio.Group options={options} onChange={onChange} value={value} optionType="button" /> */}
       <br />
       <Contract status={value}></Contract>
     </div>

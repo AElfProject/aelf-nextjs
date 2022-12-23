@@ -10,15 +10,21 @@
   position: relative;
   word-break: break-all;
 }
-.title {
-  font-size: 18px;
-  margin-bottom: 16px;
-  .font-family-medium();
+.contract {
+  &-wallet {
+    margin: 10px auto;
+    &-btn {
+      margin-right: 5px;
+    }
+    &-account {
+      margin-top: 10px;
+    }
+  }
+  &-methods {
+    margin: 10px auto;
+  }
 }
 
-.wallet-operation {
-  width: 300px;
-}
 @media screen and (max-width: @md-width) {
   .body {
     margin-bottom: 60px;

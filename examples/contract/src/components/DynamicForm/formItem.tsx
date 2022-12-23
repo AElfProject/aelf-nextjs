@@ -4,8 +4,10 @@ import { Col, Row, Form, Input, Button } from 'antd';
 import { useState } from 'react';
 import { IMethod } from 'types';
 import { DownOutlined, UpOutlined } from '@ant-design/icons';
+import { useAElfReact } from '@aelf-react/core';
 import styles from './styles.module.less';
 export default function FormItem({ name, input, fn }: IMethod) {
+  const { account, activate, defaultAElfBridge } = useAElfReact();
   const [form] = Form.useForm();
   const [toggle, setToggle] = useState(false);
   const [res, setRes] = useState('');
@@ -13,8 +15,26 @@ export default function FormItem({ name, input, fn }: IMethod) {
     // get all fileds value with param true
     const filedsValue = form.getFieldsValue(true);
     try {
-      const result = await fn(filedsValue);
+      const result = await fn.call(filedsValue);
       setRes(result);
+    } catch (e: any) {
+      setRes(e);
+    }
+  };
+  const write = async (name: string) => {
+    if (!account) {
+      await activate();
+    }
+    if (!defaultAElfBridge) return;
+    const filedsValue = form.getFieldsValue(true);
+    try {
+      const contract = await defaultAElfBridge.chain.contractAt('JRmBduh4nXWi1aXgdUsj5gJrzeZb2LxmrAbf7W99faZSvoAaE', {
+        address: account as string,
+      });
+
+      const result = await contract[name](filedsValue);
+      setRes(result);
+      return;
     } catch (e: any) {
       setRes(e);
     }
@@ -33,8 +53,11 @@ export default function FormItem({ name, input, fn }: IMethod) {
             </Form.Item>
           ))}
           <Form.Item>
-            <Button type="primary" onClick={query}>
+            <Button type="primary" onClick={query} className={styles['form-item-button']}>
               Query
+            </Button>
+            <Button type="primary" onClick={() => write(name)}>
+              Write
             </Button>
           </Form.Item>
         </Form>

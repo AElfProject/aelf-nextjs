@@ -10,26 +10,29 @@ import { store } from '../redux/store';
 import Footer from '../components/Footer';
 import initAxios from '../utils/axios';
 const Provider = dynamic(import('hooks/Providers/ProviderBasic'), { ssr: false });
-import { QueryClientProvider, QueryClient } from 'react-query';
-
+import { AElfReactProvider } from '@aelf-react/core';
 initAxios();
 export default function APP({ Component, pageProps }: AppProps) {
-  const queryClient = new QueryClient();
-
   return (
-    <QueryClientProvider client={queryClient}>
+    <>
       <PageHead title={'Contract Demo'} />
       <ReduxProvider store={store}>
         <Provider>
           <Header />
           <div className="page-component">
             <div className="bg-body">
-              <Component {...pageProps} />
+              <AElfReactProvider
+                appName="example"
+                nodes={{
+                  AELF: { rpcUrl: 'https://aelf-test-node.aelf.io', chainId: 'AELF' },
+                }}>
+                <Component {...pageProps} />
+              </AElfReactProvider>
             </div>
           </div>
         </Provider>
       </ReduxProvider>
       <Footer />
-    </QueryClientProvider>
+    </>
   );
 }
