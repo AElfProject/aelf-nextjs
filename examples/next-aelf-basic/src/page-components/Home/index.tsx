@@ -4,17 +4,11 @@ import styles from './styles.module.less';
 export default function Home() {
   return (
     <div className={styles.body}>
-      <Link href={`/example`}>
-        <a>Framework Usage - demo code</a>
-      </Link>
+      <Link href={`/example`}>Framework Usage - demo code</Link>
       <br />
-      <Link href={`/micro-app`}>
-        <a>Micro Frontends - Micro-APP</a>
-      </Link>
+      <Link href={`/micro-app`}>Micro Frontends - Micro-APP</Link>
       <br />
-      <Link href={`/monitor`}>
-        <a>Monitor - Sentry & Firebase</a>
-      </Link>
+      <Link href={`/monitor`}>Monitor - Sentry & Firebase</Link>
     </div>
   );
 }
