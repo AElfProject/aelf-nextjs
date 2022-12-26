@@ -13,7 +13,6 @@ const useInterval = (callback: () => void, delay?: number | null, deps?: Depende
       return () => clearInterval(interval);
     }
     return undefined;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [delay, ...(deps || [])]);
 };
 

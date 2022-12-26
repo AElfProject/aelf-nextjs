@@ -11,6 +11,5 @@ export default function useDebounceCallback<T extends (...args: any[]) => any>(
     if (lock.current && lock.current + delay > now) return;
     lock.current = now;
     return callback(...args);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
 }
