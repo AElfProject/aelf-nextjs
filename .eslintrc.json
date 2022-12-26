@@ -4,7 +4,7 @@
   "parser": "@typescript-eslint/parser",
   "extends": [
     "eslint:recommended",
-    "next/core-web-vitals",
+    //"next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
     "eslint-config-prettier",
     "plugin:prettier/recommended"
