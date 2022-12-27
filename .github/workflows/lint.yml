@@ -2,9 +2,23 @@ name: Create Release
 on: [push, pull_request]
 
 jobs:
-  stylelint:
+  build:
     runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [16, 18]
+
     steps:
-      - uses: actions/checkout@v2
-      - name: Analyze code statically using stylelint
-        uses: moneyforward/stylelint-action@v0
+      - name: Checkout Repo
+        uses: actions/checkout@v3.2.0
+
+      - name: Install Node
+        uses: actions/setup-node@v3.5.1
+        with:
+          node-version: ${{ matrix.node }}
+
+      - run: yarn ci
+
+      - run: yarn lint
