@@ -9,4 +9,6 @@ jobs:
       - name: stylelint
         uses: reviewdog/action-stylelint@v1
         with:
-          stylelint_input: '**/*.less'
+          github_token: ${{ secrets.github_token }}
+          stylelint_input: 'src/**/*.{css,less}'
+          stylelint_config: '.stylelintrc.json'
