@@ -34,6 +34,7 @@ export default function APP({ Component, pageProps }: AppProps) {
       router.replace(href.replace(origin, ''));
     });
   }, []);
+
   debugger;
   return (
     <QueryClientProvider client={queryClient}>
