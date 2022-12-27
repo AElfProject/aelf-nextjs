@@ -35,7 +35,6 @@ export default function APP({ Component, pageProps }: AppProps) {
     });
   }, []);
 
-  debugger;
   return (
     <QueryClientProvider client={queryClient}>
       <PageHead title={'Next Demo'} />
