@@ -21,7 +21,6 @@ jobs:
         uses: tj-actions/eslint-changed-files@v14
         with:
           config_path: '.eslintrc.json'
-          file_extensions: |
-            **/*.ts
-            **/*.tsx
           extra_args: '--max-warnings=0'
+          path: 'src'
+          all_files: true
