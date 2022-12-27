@@ -9,6 +9,7 @@ jobs:
       - name: stylelint
         uses: reviewdog/action-stylelint@v1
         with:
+          github_token: ${{ secrets.github_token }}
           reporter: github-check # Change reporter.
           stylelint_input: '**/*.less',
           packages: 'stylelint-config-prettier stylelint-config-standard'
