@@ -10,5 +10,5 @@ jobs:
         uses: reviewdog/action-stylelint@v1
         with:
           github_token: ${{ secrets.github_token }}
-          stylelint_input: 'src/**/*.{less}'
+          stylelint_input: 'src/**/*.less'
           stylelint_config: '.stylelintrc.json'
