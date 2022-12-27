@@ -1,3 +1,6 @@
+name: linting
+on: [push, pull_request]
+jobs:
 stylelint:
   stage: linting
   image: registry.gitlab.com/pipeline-components/stylelint:latest
