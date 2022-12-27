@@ -8,5 +8,3 @@ jobs:
       - uses: actions/checkout@v2
       - name: Analyze code statically using stylelint
         uses: moneyforward/stylelint-action@v0
-        with:
-          options: '["-s", "less"]'
