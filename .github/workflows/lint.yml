@@ -19,6 +19,7 @@ jobs:
       - name: Run eslint on changed files
         uses: tj-actions/eslint-changed-files@v14
         with:
+          all_files: 'true'
           config_path: '.eslintrc.json'
           # ignore_path: '/path/to/.eslintignore'
           extra_args: '--max-warnings=0'
