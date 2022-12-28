@@ -14,6 +14,5 @@ export default function useLockCallback<T extends (...args: any[]) => any>(callb
       lock.current = false;
       throw e;
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
 }
