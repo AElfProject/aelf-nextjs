@@ -9,8 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "dev:analyze": "PORT=4000 ANALYZE=true next dev",
-    "prepare": "husky install",
-    "ci": "stylelint \"**/*.scss\" --custom-formatter=node_modules/stylelint-actions-formatters"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@aelf-react/core": "^0.1.19",
