@@ -21,7 +21,7 @@ export default function SentryDemo() {
             Throw error reporting to Sentry
           </button>
           View Results:{' '}
-          <a target="_blank" href="https://sentry.io/">
+          <a target="_blank" href="https://sentry.io/" rel="noreferrer">
             here
           </a>
         </div>
@@ -32,7 +32,8 @@ export default function SentryDemo() {
           View Results:{' '}
           <a
             target="_blank"
-            href="https://console.firebase.google.com/?utm_source=firebase.google.com&utm_medium=referral">
+            href="https://console.firebase.google.com/?utm_source=firebase.google.com&utm_medium=referral"
+            rel="noreferrer">
             here
           </a>
         </div>

@@ -1,3 +1,4 @@
+// todo: delete
 const nextModeBabelPlugin = require('next-babel-conditional-ssg-ssr');
 
 const presets = ['next/babel'];
