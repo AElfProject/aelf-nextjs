@@ -13,6 +13,6 @@ jobs:
       - uses: reviewdog/action-eslint@v1
         with:
           level: error
-          reporter: github-pr-review
+          reporter: github-pr-check
           eslint_flags: '--quiet --cache --ext .js,.jsx,.ts,.tsx .'
           fail_on_error: true
