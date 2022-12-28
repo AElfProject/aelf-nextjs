@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const nextModeBabelPlugin = require('next-babel-conditional-ssg-ssr');
 
 const presets = ['next/babel'];
