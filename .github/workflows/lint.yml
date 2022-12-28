@@ -15,5 +15,5 @@ jobs:
           level: error
           reporter: github-pr-check
           eslint_flags: '--quiet --cache --ext .js,.jsx,.ts,.tsx .'
-          diff_context: diff_context
+          filter_mode: diff_context
           fail_on_error: true
