@@ -12,5 +12,6 @@ jobs:
       - run: yarn install
       - uses: reviewdog/action-eslint@v1
         with:
+          level: error
           reporter: github-check
           fail_on_error: true
