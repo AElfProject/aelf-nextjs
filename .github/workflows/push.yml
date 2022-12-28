@@ -2,6 +2,7 @@ name: reviewdog
 on:
   push:
     branches-ignore: [master, main]
+
 jobs:
   eslint:
     name: runner / eslint
